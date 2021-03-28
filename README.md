@@ -38,7 +38,7 @@ Figure 3.36 Outline of simple shell.
 II.	Executing Command in a Child Process 
 The first task is to modify the main() function in Figure 3.36 so that a child process is forked and executes the command specified by the user. This will require parsing what the user has entered into separate tokens and storing the tokens in an array of character strings (args in Figure 3.36). For example, if the user enters the command ps -ael at the osh > prompt, the values stored in the args array are: 
 
-   args[0] = "ps"    args[1] = "-ael"    args[2] = NULL
+             args[0] = "ps"    args[1] = "-ael"    args[2] = NULL
    
 This args array will be passed to the execvp() function, which has the following prototype:    execvp(char *command, char *params[])
 Here, command represents the command to be performed and params stores the parameters to this command. For this project, the execvp() function should be invoked as execvp(args[0], args). Be sure to check whether the user included & to determine whether or not the parent process is to wait for the child to exit. 
@@ -54,7 +54,7 @@ Your shell should then be modified to support the ‘>’ and ‘<’ redirectio
   
 the output from the ls command will be redirected to the file out.txt. Similarly, input can be redirected as well. For example, if the user enters 
 
-osh > sort < in.txt
+          osh > sort < in.txt
 
 the file in.txt will serve as input to the sort command.
 Managing the redirection of both input and output will involve using the dup2() function, which duplicates an existing file descriptor to another file descriptor. For example, if fd is a file descriptor to the file out.txt, the call dup2(fd, STDOUT FILENO); 
