@@ -50,7 +50,7 @@ Your program should also manage basic error handling. If there is no recent comm
 IV.	Redirecting Input and Output 
 Your shell should then be modified to support the ‘>’ and ‘<’ redirection operators, where ‘>’ redirects the output of a command to a file and ‘<’ redirects the input to a command from a file. For example, if a user enters 
 
- 	osh > ls > out.txt
+ 	          osh > ls > out.txt
   
 the output from the ls command will be redirected to the file out.txt. Similarly, input can be redirected as well. For example, if the user enters 
 
